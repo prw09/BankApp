@@ -32,4 +32,56 @@ def forgotPin():
     print("The new pin has been created, please log in")
     pin = recoverPin
 
-forgotPin()
+
+def depositInterest(p, r, t):
+
+  p = float(p)
+  r = float(r)
+  t = float(t)
+  rt = r * t
+  e = math.exp(rt)
+
+  #  Compound interest formula
+  a = p * e
+  return a
+
+print(depositInterest(1000, 0.033, 6))
+
+
+def Login():
+
+  name1 = str(input("Enter Your Name: "))
+  pin1 = str(input("Enter Your Pin: "))
+  # check if the name and pin is matched with registered details
+  if name1 == name and pin1 == pin:
+    print("Welcome to the online bankApp" + " "+ name)
+    print("please choose the menu down here!")
+
+  
+  else:
+      print("Either of your username or pin is wrong")
+      print("Please enter valid details!")
+      list1 = ["1-yes", "2-no"]
+      for i in list1:
+        print(i)
+      inp = int(input("Enter your choice below"))
+      if inp == 1:
+        list2 = ["1-do you want to attempt to login again"]
+        for e in list2:
+          print(e)
+        theanswer = str(input("Please enter your choice"))
+        theanswer = int(theanswer)
+
+        if theanswer == 1:
+          Login()
+
+        elif theanswer == 2:
+          forgotPin() 
+
+        else: 
+          print("option not available")
+          Login() 
+      
+      elif inp == 2:
+        print("Please create your account!")
+        SignIn()
