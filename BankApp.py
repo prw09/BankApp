@@ -56,6 +56,7 @@ def Login():
   if name1 == name and pin1 == pin:
     print("Welcome to the online bankApp" + " "+ name)
     print("please choose the menu down here!")
+    listmenu = ["1-deposit", "2-Withdraw", "3-Transfer", "4-CheckBalance", "5-Deposit interest rate", "6-Calculate Compound Interest", ""]
 
   
   else:
